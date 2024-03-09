@@ -1,0 +1,235 @@
+<html>
+    <head>
+        <title>
+            homepage
+        </title>
+    </head>
+    <style>
+        .leotrack{
+            float: left;
+            height: 100%;
+            width: 30%;
+            background-color: none;
+            
+        }
+        .jailertrack{
+            float: right;
+            height: 100%;
+            width: 30%;
+            background-color:none;
+        }
+        .leovid{
+        float: left;
+        object-fit: cover;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(40%);
+        transition: 0.5s;
+        background: linear-gradient(to bottom rgba(0,0,0,0), #151515);
+}
+        .leovidon{
+        float: left;
+        object-fit: cover;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        width: 80%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(100%);
+        transition: 0.5s;
+        background: linear-gradient(to bottom rgba(0,0,0,0), #151515);
+}
+        .jailervid{
+        float: right;
+        object-fit: cover;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(40%);
+        transition: 0.5s;
+        box-shadow: 0px 0px 1000px black;
+        background: linear-gradient(to bottom rgba(0,0,0,0), #151515);
+}
+        .jailervidon{
+        float: right;
+        object-fit: cover;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        width: 80%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(100%);
+        transition: 0.5s;
+        background: linear-gradient(to bottom rgba(0,0,0,0), #151515);
+}
+    .jailereduct{
+        float: right;
+        object-fit: cover;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        width: 20%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(40%);
+        transition: 0.5s;
+        background: linear-gradient(to bottom rgba(0,0,0,0), #151515);
+        
+    }
+    .leoreduct{
+        object-fit: cover;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        width: 20%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(40%);
+        transition: 0.5s;
+        background: linear-gradient(to bottom rgba(0,0,0,0), #151515);
+        
+    }
+    .logo{
+        position: fixed;
+        top: 41.5%;
+        left: 41.5%;
+        height: fit-content;
+        width: fit-content;
+        transition: 0.7s;
+    
+    }
+    .logo2{
+        position: fixed;
+        top: 41.5%;
+        left: 41.5%;
+        transition: 0.7s;
+    }
+    .logoimg{
+        opacity: 0%;
+        position: fixed;
+        transition: 0.7s;
+    }
+    .logoimgh{
+        opacity: 100%;
+        transition: 0.7s;
+    }
+    .credit{
+        position: fixed;
+        opacity: 100%;
+        color: white;
+        background-color: red;
+        height: fit-content;
+        width: fit-content;
+        position: absolute;
+        top: 60%;
+        right: 35.4%;
+        transition: 0.7s;
+        font-size: large;
+    }
+    .credit2{
+        position: fixed;
+        opacity: 0%;
+        color: white;
+        background-color: red;
+        height: fit-content;
+        width: fit-content;
+        position: absolute;
+        top: 100%;
+        right: 35.5%;
+        transition: 0.7s;
+        font-size: large;
+    }
+    .content{
+        border: 3px solid red; border-radius: 20px; height: 688px; width: 1480px;
+        opacity: 100%;
+        transition: 1.0s;
+    }
+    .uncontent{
+        border: 3px solid red; border-radius: 20px; height: 688px; width: 1480px;
+        opacity: 0%;
+        transition: 1.0s;
+    }
+        
+    </style>
+    <body onmouseleave="fixed()" style="background-color: black;">
+        <center>
+        <div class="content" id="cont">
+        <div class="logo" onmouseover="fixed()" id="logocontainer" style="position: fixed;"><a href="" style="text-decoration: none;"><img src="logo2.png" alt=""width="260px" height="90px" class="logoimgh" id="img" style="position: fixed;"></a></div>
+        <a href="jailer.html" onmouseover="unchangeleo()" onmouseleave="fixed()"><div class="leotrack"></div></a>
+        <a href="leo.html"onmouseover="changeleo()" onmouseleave="fixed()"><div class="jailertrack"></div></a>
+        </div>
+        <div class="leo"><video src="leo.mp4" class="leovid"  muted loop id="leovideo" preload="auto"></div>
+        <div class="jailer"><video src="jailer.mp4" class="jailervid" muted loop id="jailervideo" preload="auto"></video></div>
+        <pre class="credit" id="cred"> Developed by Giridharan Kandasamy,Lalith,Sahana KV </pre>
+        <audio src="En-Jannal-Vandha (mp3cut.net).mp3" autoplay="on" loop id="thanga" muted></audio>
+        </div>
+        </center>
+    </body>
+    <script>
+        var leovid=document.getElementById("leovideo")
+        var jailervid=document.getElementById("jailervideo")
+        var logo=document.getElementById("img")
+        var cred=document.getElementById("cred")
+        var lcontainer=document.getElementById("logocontainer")
+        var thanga=document.getElementById("thanga")
+        var cont=document.getElementById("cont")
+        leovid.muted=true
+        jailervid.muted=true
+        console.log(leovid)
+        function changeleo(){
+            jailervid.pause()
+            lcontainer.setAttribute("class","logo2")
+            cred.setAttribute("class","credit2")
+            logo.setAttribute("class","logoimg")
+            leovid.setAttribute("class","leovidon")
+            jailervid.setAttribute("class","jailereduct")
+            cont.setAttribute("class","uncontent")
+            thanga.pause()
+            unmuteleo()
+            leovid.play()
+}
+        function unchangeleo(){
+            jailervid.play()
+            leovid.pause()
+            lcontainer.setAttribute("class","logo2")
+            logo.setAttribute("class","logoimg")
+            cred.setAttribute("class","credit2")
+            leovid.setAttribute("class","leovid")
+            jailervid.setAttribute("class","jailervidon")
+            cont.setAttribute("class","uncontent")
+            thanga.pause()
+            unmutejailer()
+}
+        function fixed(){
+            jailervid.play()
+            leovid.play()
+            lcontainer.setAttribute("class","logo")
+            leovid.setAttribute("class","leovid")
+            jailervid.setAttribute("class","jailervid")
+            cont.setAttribute("class","content")
+            leovid.muted=true
+            jailervid.muted=true
+            thanga.play()
+            logo.setAttribute("class","logoimgh")
+            cred.setAttribute("class","credit")
+        }
+        function unmuteleo(){
+            leovid.muted=false
+        }
+        function unmutejailer(){
+            jailervid.muted=false
+        }
+        function reload(){
+            location.reload()
+        }
+    </script>
+</html>
