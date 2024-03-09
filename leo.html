@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leo.css">
+    <head>
+        <title>javascript game</title>
+    </head>
+    <body id="dark" class="bgcolor">
+        <center>
+        <div class="main" id="main">
+        <pre style="float: left;padding: right;color:  white;background-color: red;font-weight: bolder;width:250px ;height: fit-content; font-size: large;transition: 0.9s;"id="as"></pre>
+        <pre style="float: right;padding: right;color:  white;background-color: red;font-weight: bolder;width: 170px;height: fit-content; font-size: large;transition: 0.9s;"id="cs"></pre>
+        <a href="javascript:reload()" style="text-decoration: none;"><pre style="background-color: red; height: fit-content; width: fit-content; color: white; font-size: xx-large; border-radius: 13px;"> GUESS THE NUMBER </pre></a>
+        <br>
+        <input id="num" name="in" autocomplete="off">
+        <button type="submit"  value="submit"  onclick="check()">Check</button><br>
+        <br>
+        <video id="leo"  src="none" width="600px" height="320px" autoPlay="on" loop class="landing"></video>
+        <video  src="none" width="600px" height="330px" id="revid" autoplay="on" loop ></video>
+        <pre id="lost" style="font-size: large;color: red; height: fit-content;width: fit-content; font-weight: bolder;">Ratata!</pre>
+        <button onclick="mute()" id="nosound">Mute</button> &#9;&#9;&#9;<button onclick="unmute()" id="sound">Unmute</button>
+        <pre id="score" style="font-size: xx-large;color: white; background-color: red; height: fit-content;width: 240px; font-weight: bolder; border-radius: 17px;">Chances Left:10</pre><marquee behavior="scroll" direction="left" style="color: red; height: fit-content;width: 100%; padding: -500px;">
+        <pre style="font-weight:900;font-size: x-large;"> guess the number between 1 to 10 and enter if it matches nee winner illa na nee leo thalapathy maari alzu da!!</pre></marquee>
+    </div>
+    
+        <audio loop id="leo"><source src="Hukum---Thalaivar-Alappara-MassTamilan.dev.mp3" type="audio/mp3"></audio>
+        </center>
+    </body>
+    <script src="leo.js"></script>
+</html>
